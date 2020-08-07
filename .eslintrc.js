@@ -18,7 +18,16 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint'],
-  rules: {},
+  rules: {
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.ts'] }],
+    'react/style-prop-object': 'off',
+    'prettier/prettier': 'error',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'react/prop-types': 'off',
+    'no-unused-vars': 'off',
+    'react/jsx-props-no-spreading': 'off',
+  },
   settings: {
     react: {
       version: 'detect',
