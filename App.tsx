@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { AppLoading } from 'expo';
@@ -11,7 +12,7 @@ import {
   Poppins_600SemiBold as PoppinsSemiBold,
 } from '@expo-google-fonts/poppins';
 
-import Landing from './src/pages/Landing';
+import AppStack from './src/routes/AppStack';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -27,7 +28,7 @@ const App: React.FC = () => {
   return (
     <>
       <StatusBar style="light" />
-      <Landing />
+      <AppStack />
     </>
   );
 };
