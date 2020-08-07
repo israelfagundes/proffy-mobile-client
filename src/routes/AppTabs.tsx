@@ -42,8 +42,12 @@ const AppTabs: React.FC = () => {
         component={TeacherList}
         options={{
           tabBarLabel: 'Proffys',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons size={size} color={color} name="teach" />
+          tabBarIcon: ({ color, size, focused }) => (
+            <MaterialCommunityIcons
+              size={size}
+              color={focused ? '#8257e5' : color}
+              name="teach"
+            />
           ),
         }}
       />
@@ -52,10 +56,10 @@ const AppTabs: React.FC = () => {
         component={Favorites}
         options={{
           tabBarLabel: 'Favoritos',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons
               size={size}
-              color={color}
+              color={focused ? '#8257e5' : color}
               name="heart-outline"
             />
           ),
