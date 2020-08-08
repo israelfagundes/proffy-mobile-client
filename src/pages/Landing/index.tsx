@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, Image, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import api from '../../services/api';
@@ -17,7 +17,7 @@ const Landing: React.FC = () => {
 
   const [totalConnections, setTotalConnections] = useState(0);
 
-  useEffect(() => {
+  useFocusEffect(() => {
     (async function getTotalConnections() {
       const response = await api.get('connections');
 
@@ -25,7 +25,7 @@ const Landing: React.FC = () => {
 
       setTotalConnections(total);
     })();
-  }, [totalConnections]);
+  });
 
   function handleNavigate(screen: string) {
     navigate(screen);
